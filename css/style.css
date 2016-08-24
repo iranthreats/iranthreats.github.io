@@ -20,6 +20,29 @@ a.fulldiv {
 #contact ul li {
 	list-style-type: none;
 }
+#shortcuts { margin-left: 0px; padding-left: 0px; }
+#shortcuts li {
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+img.inlineimage {
+	float: right;
+}
+
+#persian-content {
+	direction: rtl;
+}
+
+#persian-content img.inlineimage {
+	float: left;
+}
+#persian-content blockquote {
+    border-left: none;
+		padding-left: 0px;
+		padding-right: 2em;
+		border-right: solid 4px rgba(144, 144, 144, 0.25);
+}
 /* Basic */
 
 	body {
