@@ -28,6 +28,7 @@ a.fulldiv {
 }
 img.inlineimage {
 	float: right;
+	padding-left: 20px;
 }
 
 #persian-content {
