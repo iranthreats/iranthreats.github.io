@@ -37,6 +37,7 @@ img.inlineimage {
 
 #persian-content img.inlineimage {
 	float: left;
+	padding-right: 20px;
 }
 #persian-content blockquote {
     border-left: none;
