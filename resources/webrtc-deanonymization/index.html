@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+    Ion by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>Fictitious Profiles and WebRTC’s Privacy Leaks Used to Identify Iranian Activists (Iran Threats: Documenting Iranian State Sponsored Hacking)</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="twitter:card" content="summary">
+
+    <meta name="twitter:url" content="https://iranthreats.github.io/resources/webrtc-deanonymization/">
+    <meta name="twitter:title" content="Fictitious Profiles and WebRTC’s Privacy Leaks Used to Identify Iranian Activists">
+    <meta name="twitter:description" content="New malware used in impersonation campaigns targeting human rights organizations, bloggers, Middle Eastern countries and foreign policy institutions.">
+    <meta name="twitter:image" content="">
+
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/skel-layers.min.js"></script>
+    <script src="/js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="/css/skel.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style-xlarge.css" />
+    </noscript>
+</head>
+    <body id="top">
+
+        <!-- Header -->
+        <header id="header" class="skel-layers-fixed">
+            <h1><a href="#">Iran Threats</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+            <section id="main" class="wrapper style1">
+                <!-- <header class="major">
+                </header> -->
+                <div class="container">
+                    <section id="english-content">
+                        <h2>Fictitious Profiles and WebRTC’s Privacy Leaks Used to Identify Iranian Activists</h2>
+                        <h4>Public Notice (11 November 2016)</h4>
+
+                        <h3>Background</h3>
+                        <p>Since the <a href="https://iranthreats.github.io/us-16-Guarnieri-Anderson-Iran-And-The-Soft-War-For-Internet-Dominance-paper.pdf">Technical Preview</a> of our forthcoming Carnegie Endowment publication about state-sponsored espionage campaigns was released at Black Hat USA, we have continued to disclose information about current Iranian activities in order to promote public education and to provide indicators of compromise.</p>
+                        <p>Beginning in early 2008, <a href="http://justiceforiran.org/wp-content/uploads/2012/03/Gerdab-a-dictated-scenario.pdf">Iranian security entities have engaged in operations</a> to identify and arrest administrators of “illicit” websites and social media groups. In recent years, the detention and interrogation of members of online communities has been publicized by state media for propaganda purposes. However, the heavy-handedness of the government has also inadvertently created a situation where Iranian users are better positioned than others to avoid some surveillance activities – increasing the burden of finding pseudonymous users.</p>
+                        <p>We find indications that Iranian actors have used privacy weakness in aspects of a common web protocol in order to obtain the real IP of Internet users without their awareness for investigatory purposes. These discoveries include:</p>
+                        <ul>
+                        <li>Sustained maintenance of websites designed to collect private IP addresses for users through taking advantage of privacy weaknesses in protocols;</li>
+                        <li>Targeted attempts to lure pseudonymous users and members of human rights organizations into visiting the bait sites; and,</li>
+                        <li>Broader indications of the same sites and profiles targeting communities persecuted by Iranian security forces, such a sexual minorities and political opponents, often tied to those communities being later deleted without explanation.</li>
+                        </ul>
+                        <p>Combined with the state’s power to force Internet service providers to disclose the customer details from stored records, these campaigns can enable the de-anonymization of pseudonymous users. The potential real world observation of the use of these known technical issues to obtain private information about at-risk communities demonstrates the social impact of protocol designs, and should provoke broader discussion about protecting users by default.</p>
+
+                        <h3>Incident and Impact</h3>
+
+                        <p><img src="images/spearphish_site-gmail.png" style="width: 40%" class="inlineimage">In late December, several domains were registered in the name of the Oshkosh Corporation, an American defense industrial firm with <a href="https://oshkoshdefense.com/news/oshkosh-defense-appoints-managing-director-oshkosh-saudi-arabia/">subsidiaries in Saudi Arabia</a>. The activities of fictitious social media profiles further indicated a sustained interested in the company, and aligned with a broader campaign of espionage directed at the defense industrial base. The typographic domains impersonated internal VPN resources to obtain employee credentials to private network resources, such as email accounts and shared file servers. Based on common patterns and registration information, the Oshkosh Corporation domains appeared to be maintained by Iranian actors – the same group behind the Ghambar malware documented at Black Hat that we believe to be related to <a href="https://cdn2.hubspot.net/hubfs/270968/assets/Cleaver/Cylance_Operation_Cleaver_Report.pdf">Cylance’s Operation Cleaver</a>. The impersonation sites themselves contained another function we had not seen amongst Iranian actors previously – an attempt to enumerate internal IP addresses in order to conduct network reconnaissance. This approached has continued to arise in subsequent spearphishing attempts, including more banal Google credential phishing sites targeting Iranian dissidents, across different campaigns and different groups. While at first this tactic could be directed at identifying security researchers, subsequent campaign indicates a deeper purpose.</p>
+                        <p>The WebRTC protocol was designed to enable responsive real-time communications over the Internet, and is instrumental in allowing streaming video and conferencing applications to run in the browser. In order to easily facilitate direct connections between computers (bypassing the need for a central server to act as a gatekeeper), WebRTC provides functionality to automatically collect the local and public IP addresses of Internet users (ICE or STUN). These functions do not require consent from the user, and can be instantiated by sites that a user visits without their awareness. The potential privacy implications of this aspect of WebRTC are well <a href="https://mozillamediagoddess.org/2015/09/10/webrtc-privacy/">[1]</a><a href="http://www.unhappyghost.com/2015/02/webrtc-killing-tor-vpn-ip-masking-privacy.html">[2]</a> documented, and certain browsers have provided options to limit its behavior.</p>
+                        <p style="clear: both; text-align: center">
+                            <div class="row">
+                              <div class="12u" style="text-align: center"><img src="images/webrtc-diagram.png" style="width: 60%;"></div>
+                            </div>
+                        </p>
+                        <p><img src="images/webrtc-example.png" style="width: 40%" class="inlineimage">The disclosure of network addresses presents a specific risk to individuals that use privacy tools to conceal their real IP address to sites that they visit. Typically, when a user browses the Internet over a VPN, the only address that should be recorded by sites they visit would be that of the VPN provider itself. Using the WebRTC STUN function allows a site to additionally enumerate the addresses that are associated with the computer that the visitor is using – rather than those of intermediaries. This means that if a user is browsing the Internet on an ADSL connection over a VPN, a malicious site they visit could potentially surreptitious record the home address of the user. The Tor Browser has <a href="https://trac.torproject.org/projects/tor/ticket/16221">restricted WebRTC’s functionality</a> as a result of the potential for deanonymization. <a href="https://support.hotspotshield.com/hc/en-us/articles/206128213-Hotspot-Shield-Settings">Hotspot Shield</a> and other VPNs also provide options to block WebRTC traffic, which are not enabled by default and is not a common feature overall.</p>
+                        <p>The Iranian government’s aggressive censorship of social media platforms has inadvertently supported a culture of privacy amongst Internet users. In response to high-publicized campaigns against online activists prior to and during the Green Movement, use of pseudonyms on social media is common in Iran. Individuals frequently use initials or locations as their profile names. Moreover, the necessary use of VPNs or circumvention services to bypass the government’s filter has afforded an additional degree of protection against passive network surveillance. This also aligns with our direct observation that a significant portion of the Iranian activists compromised by the Infy malware campaign regularly used VPN services (noted at Black Hat).</p>
+                        <p style="clear: both; text-align: center">
+                            <div class="row">
+                              <div class="12u"  style="clear: both; text-align: center"><img src="images/spearphish_site-oshkosh.png" style="width: 60%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                            </div>
+                            <div class="row"><div class="12u"  style="clear: both; text-align: center; font-style: italic">Spearphishing Site Targeting Oshkosh Corporation</div></div>
+                        </p>
+                        <p>Taken in the context of increased adoption of HTTPS, the government has little direct awareness of the content of certain Internet traffic. In absence of compliance by foreign technology companies to Iranian government requests, the use of anti-filtering tools and consistent maintenance of pseudonyms affords a meaningful degree of privacy to online activists against identification by domestic security agencies. Quite simply, without intrusions or social engineering, the Iranian government has little visibility into who is participating in certain online communities – or whether they are even in the country.</p>
+                        <p><img src="images/iran-spider.png"  style="width: 20%" class="inlineimage">The response from the government – notably the Islamic Revolutionary Guard Corps – has been <a href="https://www.iranhumanrights.org/2015/03/facebook-users-arrested/">highly-public arrests</a> of members of prohibited online communities, such as dissidents or religious minorities. These arrests, given names such as Operation Spider, have intended to send a chilling message to the public that the state is watching online – even to exaggerate its technical capacities. While earlier campaigns targeted activists, in recent months, announced arrests have also included modelling communities, artists, and other social groups engaged in activities persecuted by the hardline establishment. The arrested are often forced to confess on television, delete their accounts, or turn them over to authorities, which are then taken over to post public warnings.</p>
+                        <p>The IRGC has not disclosed investigatory techniques, unsurprisingly. In at least one case, an individual arrested had posted personal information on their profile and would have been easy to identify. However, based on records sourced from infrastructure of Iranian threat groups, it appears that intrusion groups (e.g. Flying Kitten) have engaged in spearphishing against the same sets of targets.</p>
+                        <p>While the recording of internal IPs in spearphishing attempts against private companies or other institutions could reasonably be attributed to reconnaissance, in other documentations cases, the sole purpose of an engagement was to collect addresses of private individual with no other action in the attack. Taken in the context of the targeting of those attempts, these incidents suggest that certain Iranian groups appear to be leveraging privacy issues with WebRTC toward de-anonymizing social network users. This activity aligns with a well-documented history of de-anonymization through bait websites designed to a href="https://bahrainwatch.org/ipspy/viewreport.php">record IP addresses of Twitter users in Bahrain</a>, and similarly in our Iranian cases were targeted against users with pseudonyms and operating within civil society organizations.</p>
+                        <p>In one case, a social media profile with the name “Maryam Javadifar” – which used pictures of DJ and model Mellisa Clarke – approached a human rights activist over Facebook. In a series of messages, Javadifar claimed that the individual's password was found online, on a site hidden behind an Iranian short URL service. The site (rinpid.com) promised visitors the ability to buy psychoactive drugs, sex products, and other items prohibited by the “Islamic regime.” Although poorly implemented, with errors and failing to hide messages from the <a href="https://github.com/diafygi/webrtc-ips">copied code</a>, the sole function of that bait site is to collect visitor IP addresses and report them back to operators. The Javadifar profile is over two years old, and clearly fake. While Iranian threat actors are known for their sustained use of fictitious profiles, it is also notable that the Javadifar has demonstrated a clear interest in specifically targeting hundreds of political dissidents, primarily members of the Green Movement and Monarchists (supporters of the deposed royal family).</p>
+                        <p style="clear: both">
+                            <div class="row">
+                              <div class="4u"><img src="images/bait-rinpid.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                              <div class="4u"><img src="images/bait-telegram.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                              <div class="4u"><img src="images/profile-javadifar.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                            </div>
+                            <div class="row">
+                              <div class="4u" style="font-style: italic">www.rinpid.com/maz.php?n=[identifier]</div>
+                              <div class="4u" style="font-style: italic">www.teiegrem.me/joinchat/At19HEi76Tsh6AR6Y6.php?n=200</div>
+                              <div class="4u" style="font-style: italic">facebook.com/maryam.javadifar.7</div>
+                            </div>
+                        </p>
+                        <p>The same approach would arise again targeting Human Rights Activists in Iran (HRA), a well-known human rights organization with deep connections within the country. HRA has been repeatedly targeted by different Iranian threat groups, and was amongst those targeted in the early IRGC crackdowns. HRA was approached on one of its Telegram accounts by an unknown individual asking about reports that one of its administrators was arrested. The bait posed as an image (domain name: “tntnet.ir”) and was once again designed to collect IPs. Perhaps ironically, the IP collection site is based on code copied from a service intended to educate users on such leakages, IPLeak.net. After the approach failed, the attacker then modified the previous messages to clean up their tracks.</p>
+                        <p>Artifacts from other attempts using the same domains and similar tactics can be found elsewhere, portraying a consistent theme in targeting communities inside Iran that run afoul of the cultural and social mandates of the Islamic Republic. The “tntnet” bait image that targeted HRA was also posted to a Yahoo Group named “Hafif 69.” Hafif 69 appeared to have served as a Persian-language community for exchanging pornographic images, before it was deleted for unknown reasons. In another case, it is included in a post on a <a href="http://tanhayhasti.blogfa.com/?p=2">suspiciously sparse Blogfa blog “tanhayhasti”</a> (translation: you are lonely) – which could be an typographic impersonation of another site.</p>
+                        <p style="clear: both">
+                            <div class="row">
+                              <div class="6u"><img src="images/hra-chat.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                              <div class="6u"><img src="images/hra-profile.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                            </div>
+                        </p>
+                        <p>Other domain names registered by the same actors mirror directly documented resources. The registrant of rinpid, “Hosine Tatar” (ho.1359tat@gmail.com), also maintained several other domains (free-froosh.com and tehran2020.com), including a typographic domain for Telegram. A <a href="http://webcache.googleusercontent.com/search?q=cache:sXA7uSLXceEJ:urlquery.net/report.php%3Fid%3D1473883945867+&cd=1&hl=en&ct=clnk&gl=us">captured version of the fake Telegram site</a> from the audit tool, URLQuery, indicates it was a duplicate of rinpid and posed as an invitation link for a Telegram Public Channel (www.teiegrem.me/joinchat/At19HEi76Tsh6AR6Y6.php?n=200). Moreover, the rinpid domain can also be found in logs of real Telegram Public Channels (On September 29, 2016, <a href="https://inten.to/telegram/channel-jpmvs_iranian-knl-pyshtzn">"اختلاص هاي فاش نشده دولتمردان ايران http://www.rinpid.com/mar3.php?IP=&n=8012"</a>), posing as reports on public embezzlement – a controversial issue that has resulted in journalists being arrested for disclosing municipal corruption. As with the Hafif 69 Yahoo Group, that Public Channel has now been deleted.</p>
+                        <p style="clear: both">
+                            <div class="row">
+                              <div class="6u"><img src="images/artifacts-hafif69.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                              <div class="6u"><img src="images/artifacts-tanhayhasti.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                            </div>
+                        </p>
+                        <p>The fake Telegram domain was also cohosted with Google impersonation domains – however, the service is a shared hosting provider, so there is no hard evidence to their connection (google-mailseurity.com and google-mailsecurity.com).</p>
+
+                        <h3>Considerations</h3>
+                        <p>We find recurrent examples of pseudonymous Internet users being targeted by campaigns whose sole intent appears to be to collect their IP addresses, with external information supporting the themes and trends found in directly observed incidents. As demonstrated across the history of Operation Spider, Internet users interested in fashion and arts are at as much risk as political activists. However, the former may have less of an understanding of the threat posed to them, and have not been the focus of digital security education.</p>
+                        <p>In previous notices, we have attempted to provide recommendations to users on how to protect themselves against such threats. While <a href="https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia">plugins</a> have been created to configure browsers to mitigate against the misuse of STUN, a solution that will reach into vulnerable communities requires action by the technology companies, rather than piecemeal education on a complex technology issue. For example, browsers could require consent to use the STUN function, or anti-filtering tools could block aspects of STUN negotiation or WebRTC functionality.</p>
+                        <p>This situation also highlights the difficulty in sourcing rigorous data on the real world threats posed to users. The repetition of the actions described herein lead us to maintain a certain degree of confidence in our hypothesis, but we cannot observe what happens after IP addresses are obtained and security apparatuses are not transparent about their methods to those arrested. Additional, pseudonymous users in authoritarian countries are often distant from software developers making decisions on protocols. The potential arrest of an individual as a result of the exploitation of this weakness is often difficult for even well-connected human rights organizations to account for. In the same vein, it would be nearly impossible to ensure that at-risk users receive the security recommendations that would enable them to disable default settings – let alone to explain such a highly-technical matter.</p>
+
+                        <section id="contact">
+                            <h4>Email</h4>
+                            <h5>Claudio (nex@amnesty.org)</h5>
+                            <ul>
+                                <li>Fingerprint: E063 75E6 B9E2 6745 656C 63DE 8F28 F25B AAA3 9B12</li>
+                            </ul>
+                            <h5>Collin (cda@asc.upenn.edu)</h5>
+                            <ul>
+                                <li>PGP Key: <a href="https://cda.io/key.asc">https://cda.io/key.asc</a></li>
+                                <li>Fingerprint: 510E 8BFC A60E 84B4 40EA 0F32 FAFB F2FA</li>
+                            </ul>
+                        </section>
+
+                        <h3>Acknowledgement</h3>
+
+                        <p>The authors of this post would like to sincerely thank Keyvan Rafiee and DomainTools, who have provided meaningful support throughout this process.</p>
+
+                        <h3>Indicators of Compromise</h3>
+
+                        <h4>IP Collection Sites</h4>
+                        <ul>
+                          <li>teiegrem.me</li>
+                          <li>free-froosh.com</li>
+                          <li>tehran2020.com</li>
+                          <li>tntnet.ir</li>
+                          <li>rinpid.com</li>
+                        </ul>
+
+                        <h4>Spearphishing Domains</h4>
+                        <ul>
+                          <li>oshkoschorp.com</li>
+                          <li>oshkoshcrop.com</li>
+                          <li>oshksohcorp.com</li>
+                          <li>portal.oshksohcorp.com</li>
+                          <li>173.208.129.181</li>
+                          <li>82.102.10.70</li>
+                        </ul>
+
+                        <h3>Archived Information</h3>
+                        <p style="clear: both">
+                            <div class="row">
+                              <div class="6u"><img src="images/archive-oshkosh.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                              <div class="6u"><img src="images/archive-ipleak.png" style="width: 100%; box-shadow: 1px 1px 5px 1px #999999"></div>
+                            </div>
+                        </p>
+                </div>
+            </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <ul class="copyright">
+                    <li><i class="fa fa-creative-commons" aria-hidden="true"></i> 2016, Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</li>
+                    <li>Ion Template by <a href="http://templated.co">TEMPLATED</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </body>
+</html>
