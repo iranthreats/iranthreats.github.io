@@ -58,9 +58,7 @@
 						<h3>Case 1: Phishing Infrastructure</h3>
 						<p>The commonalities between externally-visible components the attacks conducted by both Flying Kitten and Rocket Kitten are notable. Check Point suggests the two shared a domain naming scheme, for example Drive-Google.com.co (created April 2014, connected to Flying Kitten) compared to Drive-Google.co (created July 2014, associated with Rocket Kitten). A comparison of the content of credential theft attempts adds more suspicion about a relationship. However, without disclosures of private operational information, these are weak indicators, and could as easily suggest that members learned from the FireEye report. Through the disclosure of the code used in Rocket Kitten spearphishing, we demonstrate that these commonalities are more than superficial – that Rocket Kitten has used Flying Kitten tools for credential theft.</p>
 						<p>Publications thus far have indicated that Rocket Kitten used different malware and credential theft resources than Flying Kitten. In Check Point’s report, the company documented a database-driven credential theft platform, named by its creator as the "Oyun Management System." Through gaining access to the backend database, the researchers were able to observe a year’s worth of phishing attempts, starting in August 2014. Screenshots from the database show some URLs that were used in phishing, often following a schema of:</p>
-						<p>
-							<pre>   http://profiles.googel.com.inc.gs/?_schema=([0-9]+)&rnd=([0-9]+)</pre>
-						</p>
+						<pre>   http://profiles.googel.com.inc.gs/?_schema=([0-9]+)&rnd=([0-9]+)</pre>
 						<p>This parallels first-hand observation of attempts against Iranians journalists during September and October 2014. The pattern also provides a possible fingerprint for Rocket Kitten attacks. However, the tactics and tools in phishing campaigns attributed to Rocket Kitten were not homogenous, even at the same time. The first post Flying Kitten spearphishing attempts we have observed occurred at the start of August 2014, and a different pattern in the URLs of phishing sites is apparent:</p>
 						<pre>
     http://account-google.co/EditPassd?pli=([A-Z0-9]+)
@@ -109,12 +107,10 @@
 						<p>ClearSky’s logs strongly resemble the format found both on Flying Kitten and the Ishak phishing pages, which follow a somewhat unique format that differs slightly across copies, for example in Ishak:</p>
 						<pre>    $data = "$date  |  user:$user  | email:$email | pass:-$password- | $IP | $Page$URI | $Agent | $referer \r\n";</pre>
 						<p>One addition to the Ishak codebase related to logging and authentication that was not previously seen in Flying Kitten kit, which appears to respond to ClearSky’s report:</p>
-					  <p>
-								<div class="row">
-									<div class="6u"  style="text-align: center; font-style: italic"><img src="images/fk-htaccess.png" style="box-shadow: 1px 1px 5px 1px #999999" /></div>
-									<div class="6u"  style="text-align: center; font-style: italic"><img src="images/fk-log.png" style="box-shadow: 1px 1px 5px 1px #999999" /></div>
-								</div>
-						</p>
+					<div class="row">
+						<div class="6u"  style="text-align: center; font-style: italic"><img src="images/fk-htaccess.png" style="box-shadow: 1px 1px 5px 1px #999999" /></div>
+						<div class="6u"  style="text-align: center; font-style: italic"><img src="images/fk-log.png" style="box-shadow: 1px 1px 5px 1px #999999" /></div>
+					</div>
 						<p>The scripts have changed over time. The different folders capture iterative versions up to August 2016. While there are phishing-related files as old as June 2014 in the Ishak code, the actual spearphishing activity reflected in logs begins around February 2016. These logs reflect an active group targeting a broad range of sectors, although with a clear focus on Iranian domestic politics. Since no publications have focused on Rocket Kitten since the Check Point report, there is no external confirmation about the origin of these campaigns. However, our direct observation of Rocket Kitten attacks against the human rights community runs unbroken from August 2014 to present, and while there are shifts over time, there is also a fair amount of congruency.</p>
 						<p>Examples of recorded hostnames within the Ishak logs include:</p>
 						<ul>
@@ -150,14 +146,12 @@
 						<p>The full path for Flash site on new IranianUkNews domain was the following:</p>
 						<pre>    iranianuknews.com/adobe/flashplayer/Download/78923582514/index.php?id=7892358</pre>
 						<p>Similar to the case of the Flying Kitten phishing script, we had a copy of the backend of Plugin-Adobe[.]com. Timestamps of the Flying Kitten files and logs suggest their site was initially created in August 2013. A comparison of the structure and content of the Flying Kitten page and the new site strongly indicates that they are nearly the same code. Minor differences in the CSS and Javascript of the Flash download page suggests that the attacker made small iterative changes to the original scripts, but used the original source to continue operations (including references to a version of Flash released in July 2013).</p>
-						<p>
-							<div class="row">
-								<div class="12u"  style="text-align: center; font-style: italic"><img src="images/fk-malware-log.png" style="box-shadow: 1px 1px 5px 1px #999999;" /></div>
-							</div>
-							<div class="row">
-								<div class="12u"  style="text-align: center; font-style: italic">Logging Functions on a Fake BBC Persian Malware Site</div>
-							</div>
-						</p>
+						<div class="row">
+							<div class="12u"  style="text-align: center; font-style: italic"><img src="images/fk-malware-log.png" style="box-shadow: 1px 1px 5px 1px #999999;" /></div>
+						</div>
+						<div class="row">
+							<div class="12u"  style="text-align: center; font-style: italic">Logging Functions on a Fake BBC Persian Malware Site</div>
+						</div>
 						<p>The functionality and behavior of the sites is similar despite the code being undisclosed. Flying Kitten was often meticulous about logging, as the phishing script illustrates, and in that spirit their fake Adobe site would maintain logs separated out in different files based on campaigns (defined based on URL parameters). Understanding this predictable behavior, we were able to retrieve the logs from the new Rocket Kitten site. These logs also bear a similarity to between themselves and the Ishak credential theft logs.</p>
 
 						<p>Flying Kitten (2013)
@@ -237,7 +231,7 @@
 						<h3>Conclusion</h3>
 						<p>Rocket Kitten has been substantially less active after the successive reports in Fall 2015, often nearly dormant for months. Whereas Rocket Kitten was previously the most prolific group, the spearphishing attempts posed to civil society have shifted to other operators. In the lead up to the February 2016 parliamentary election, the malware "Infy" became the most active threat in our monitoring, with only a few Rocket Kitten attempts. Since then, the mantle has been taken by Charming Kitten (Newcaster), Oilrig, and others.</p>
 						<p>Unfortunately, it is not always clear why researchers assert that certain domains are related, imposing hurdles to scrutinizing claims. Similar targeting is not sufficient toward establishing attribution – Iranian groups generally maintain the same focus.</p>
-						<p>On the other hand, the efforts that were labeled Rocket Kitten could have been organized in a more nebulous arrangement – and Rocket Kitten was never a uniform operator to begin with. Like Iran’s "mosaic defense" military organizing structure, the hacking efforts are clearly more decentralized and fluid than countries with advanced cyber warfare operations. This makes tracking and attributing attacks originating from Iran all the more complex. These two cases touch on the core of Flying Kitten’s toolkit as we understand it with code was either repurposed or experimented with by Rocket Kitten.<p>
+						<p>On the other hand, the efforts that were labeled Rocket Kitten could have been organized in a more nebulous arrangement – and Rocket Kitten was never a uniform operator to begin with. Like Iran’s "mosaic defense" military organizing structure, the hacking efforts are clearly more decentralized and fluid than countries with advanced cyber warfare operations. This makes tracking and attributing attacks originating from Iran all the more complex. These two cases touch on the core of Flying Kitten’s toolkit as we understand it with code was either repurposed or experimented with by Rocket Kitten.</p>
 						<p>The group, whatever we call it, has still engaged in spearphishing campaigns, however, the level of professionalism has declined and the nature of their activities changed. This could indicate that just as Flying Kitten appears to have disbursed, so has Rocket Kitten.  Taken together, these differences start to define two personalities – both described as "Rocket Kitten" – one using the tools tied to an individual named Yaser Balaghi (Gholee, Woolger, MPK, Oyun) and one connected to Flying Kitten tools (Ishak).</p>
 						<p>If our version of Rocket Kitten is not the real Rocket Kitten, then what is? Is it still Flying Kitten?</p>
 						<p>Moving forward, this also tells a cautionary tale as researchers find fingerprints of multiple Iranian groups involved in attacks such as <a href="https://securingtomorrow.mcafee.com/business/shamoon-returns-bigger-badder/">those targeting Saudi Arabia</a>. The history of Iranian actors has shown that toolkits move, and so do people.</p>
